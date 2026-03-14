@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chrome 语音转文字</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Chrome 语音输入采集</h1>
+      <p class="intro">
+        点击“开始采集”后对着麦克风说话，应用会实时把语音转换成文字。
+      </p>
+
+      <section class="controls">
+        <label for="lang">识别语言</label>
+        <select id="lang">
+          <option value="zh-CN" selected>中文（普通话）</option>
+          <option value="en-US">English (US)</option>
+          <option value="ja-JP">日本語</option>
+        </select>
+        <button id="startBtn">开始采集</button>
+        <button id="stopBtn" disabled>停止采集</button>
+      </section>
+
+      <p id="status" class="status">状态：待机</p>
+
+      <section>
+        <h2>实时转写</h2>
+        <textarea id="output" rows="12" placeholder="识别结果会显示在这里..." readonly></textarea>
+      </section>
+
+      <section class="actions">
+        <button id="copyBtn">复制文字</button>
+        <button id="clearBtn">清空结果</button>
+      </section>
+
+      <p id="hint" class="hint">
+        提示：此功能依赖 Chrome 的 Web Speech API，请使用 HTTPS 或 localhost。
+      </p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
